@@ -1,0 +1,189 @@
+/*
+Color Palette
+Pale Blue : #c1cad6	(193,202,214)
+Pale Purple : #d4adcf	(212,173,207)
+Bold Rose : #f26a8d	(242,106,141)
+Pink : #f49cbb	(244,156,187)
+Baby Blue : #cbeef3	(203,238,243)
+*/
+:root{
+    --PaleBlue: #b3d4ff;
+    --PalePurple: #f8afee;
+    --BoldRose: #f26a8d;
+    --Pink: #f49cbb;
+    --BabyBlue: #d8f8fc;
+    --Shadow: grey;
+}
+
+body{
+    background-color: var(--BabyBlue);
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: var(--BoldRose);
+    padding: 5px 5px;
+    box-shadow: 2px 2px grey;
+}
+
+.topnav a:nth-child(2), .topnav a:nth-child(3){
+    border-bottom: 3px solid var(--BabyBlue);
+    border-top: 3px solid var(--BabyBlue);
+    float: right;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    padding: 14px 0px;
+    text-decoration: none;
+    font-size: 17px;
+    width: 25%;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+}
+
+.topnav a.active:nth-child(2), .topnav a.active:nth-child(3){
+    color: black;
+}
+
+.topnav a:nth-child(2):after, .topnav a:nth-child(3):after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top center;
+    background: var(--BabyBlue);
+    z-index: -1;
+    transition: transform 0.5s;
+}
+
+.topnav a:hover:nth-child(2)::after, .topnav a:hover:nth-child(3)::after{
+    transform: scaleY(1);
+}
+
+.topnav a:hover:nth-child(2), .topnav a:hover:nth-child(3){
+    color: black;
+}
+
+#Drive{
+    height: 50px;
+    float: left;
+    border: none;
+}
+
+#Drive > img{
+    height:100%;
+    width:100%;
+}
+
+.Cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 3rem;
+}
+
+.Card{
+    /* background-color: var(--BoldRose); */
+    background-image:linear-gradient(var(--BoldRose), orange);
+    margin: auto;
+    margin-top: 2rem;
+    width: 80%;
+    height: 80%;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 2px 2px 2px grey;
+    transition: 0.3s ease;
+    border-radius: 10px;
+}
+
+.Card:hover{
+    box-shadow: 2px 2px 2px rgb(34, 34, 34);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+#OrderList{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+}
+
+.OrderItem{
+    background-image:linear-gradient(var(--BoldRose), orange);
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    width: 80%;
+    height: 80%;
+    padding: 1rem;
+    padding-bottom: 0;
+    text-align: center;
+    box-shadow: 2px 2px 2px grey;
+    transition: 0.3s ease;
+    border-radius: 10px;
+}
+
+.OrderItem:hover{
+    box-shadow: 2px 2px 2px rgb(34, 34, 34);
+    transition: 0.3s ease;
+}
+
+button{
+    background-color: var(--BabyBlue);
+    border: none;
+    margin: auto;
+    color: black;
+    padding: 0.7rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+button:hover{
+    background-color: var(--PaleBlue);
+    transition: 0.5 ease;
+}
+
+.ButtonContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: auto;
+    margin: auto;
+    text-align: center;
+}
+
+.SectionHeader{
+    text-align: center;
+}
+
+.Account{
+    text-align: center;
+    padding: auto;
+    margin: auto;
+    background-image:linear-gradient(var(--BoldRose), orange);
+    border-radius: 10px;
+}
+
+.AccInfo{
+    text-align: left;
+    margin: 0.5rem;
+    padding: 0.5rem 0rem 0.5rem 2rem;
+    background-color: rgb(255, 109, 109);
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.AccInfo > p, .AccInfo > a{
+    margin: 0.2rem 0;
+}
+
+#AccImg{
+    display: block;
+    margin: 2rem auto auto auto;
+    border-radius: 50%;
+}
