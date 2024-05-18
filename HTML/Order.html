@@ -8,7 +8,13 @@
     <title>Site</title>
 </head>
 
-<body onload="AddToList()">
+<body onload="UpdateCardText('CupcakeCount', CupcakeCount, 'Cupcake')
+UpdateCardText('LoadedFriesCount', LoadedFriesCount, 'Loaded Fries')
+UpdateCardText('CookieCount', CookieCount, 'Cookie')
+UpdateCardText('SundaeCount', SundaeCount, 'Sundae')
+UpdateCardText('FunnelCakeCount', FunnelCakeCount, 'Funnel Cake')
+UpdateCardText('MilkshakeCount', MilkshakeCount, 'Milkshake')
+UpdateCardText('CandyCount', CandyCount, 'Candy')">
     <div>
         <div class="topnav">
             <!--Change img to small blue jacket one when going to mobile view-->
@@ -18,6 +24,20 @@
         </div>
     </div>
     <div id="OrderList">
+        <div class='OrderItem' id='CupcakeCount'>
+        </div>
+        <div class='OrderItem' id='LoadedFriesCount'>
+        </div>
+        <div class='OrderItem' id='CookieCount'>
+        </div>
+        <div class='OrderItem' id='SundaeCount'>
+        </div>
+        <div class='OrderItem' id='FunnelCakeCount'>
+        </div>
+        <div class='OrderItem' id='MilkshakeCount'>
+        </div>
+        <div class='OrderItem' id='CandyCount'>
+        </div>
     </div>
     <script src="../JS/Index.js"></script>
 </body>

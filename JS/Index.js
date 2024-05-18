@@ -6,6 +6,9 @@ function LocalStorageSet(){
         localStorage.setItem("LoadedFriesCount", 0)
         localStorage.setItem("CookieCount", 0)
         localStorage.setItem("SundaeCount", 0)
+        localStorage.setItem("FunnelCakeCount", 0)
+        localStorage.setItem("MilkshakeCount", 0)
+        localStorage.setItem("CandyCount", 0)
     }
 }
 
@@ -15,55 +18,9 @@ let CupcakeCount = localStorage.getItem("CupcakeCount");
 let LoadedFriesCount = localStorage.getItem("LoadedFriesCount");
 let CookieCount = localStorage.getItem("CookieCount");
 let SundaeCount = localStorage.getItem("SundaeCount");
-
-function AddToList(){
-    if (document.getElementById('CupcakeCount') == null){
-        ElList.innerHTML += "<div class='OrderItem' id='CupcakeCount'><h2>Cupcake</h2><p>You currently have " + CupcakeCount + " \
-        orders of cupcakes in your basket</p><div class='ButtonContainer'><button type='button' onclick='RemoveFromOrderList(\"CupcakeCount\")'>&#8722;\
-        </button><button type='button' onclick='AddToOrderList(\"CupcakeCount\")'>&#43;</button></div>\
-        </div>"
-    }
-    else{
-        document.getElementById('CupcakeCount').innerHTML = "<h2>Cupcake</h2><p>You currently have " + CupcakeCount + " orders of \
-        cupcakes in your basket</p><div class='ButtonContainer'><button type='button' onclick='RemoveFromOrderList(\"CupcakeCount\")'>&#8722;</button>\
-        <button type='button' onclick='AddToOrderList(\"CupcakeCount\")'>&#43;</button></div>\
-        "
-    }
-    if (document.getElementById('LoadedFriesCount') == null){
-        ElList.innerHTML += "<div class='OrderItem' id='LoadedFriesCount'><h2>Loaded Fries</h2><p>You currently have\
-        " + LoadedFriesCount + " orders of loaded fries in your basket</p><div class='ButtonContainer'><button type='button' onclick='RemoveFromOrderList\
-        (\"LoadedFriesCount\")'>&#8722;</button><button type='button' onclick='AddToOrderList(\"LoadedFriesCount\")'>\
-        &#43;</button></div></div>"
-    }
-    else{
-        document.getElementById('LoadedFriesCount').innerHTML = "<h2>Loaded Fries</h2><p>You currently have " + LoadedFriesCount + " \
-        orders of loaded fries in your basket</p><div class='ButtonContainer'><button type='button' onclick='RemoveFromOrderList(\"LoadedFriesCount\")'>&#8722;</button>\
-        <button type='button' onclick='AddToOrderList(\"LoadedFriesCount\")'>&#43;\
-        </button></div>"
-    }
-    if (document.getElementById('CookieCount') == null){
-        ElList.innerHTML += "<div class='OrderItem' id='CookieCount'><h2>Cookie</h2><p>You currently have " + CookieCount + " \
-        orders of cookies in your basket</p><div class='ButtonContainer'><button type='button' onclick='RemoveFromOrderList(\"CookieCount\")'>&#8722;\
-        </button><button type='button' onclick='AddToOrderList(\"CookieCount\")'>&#43;</button>\
-        </div></div>"
-    }
-    else{
-        document.getElementById('CookieCount').innerHTML = "<h2>Cookie</h2><p>You currently have " + CookieCount + " orders of \
-        cookies in your basket</p><div class='ButtonContainer'><button type='button' onclick='RemoveFromOrderList(\"CookieCount\")'>&#8722;</button>\
-        <button type='button' onclick='AddToOrderList(\"CookieCount\")' '>&#43;</button></div>"
-    }
-    if (document.getElementById('SundaeCount') == null){
-        ElList.innerHTML += "<div class='OrderItem' id='SundaeCount'><h2>Sundae</h2><p>You currently have " + SundaeCount + " \
-        orders of sundaes in your basket</p><div class='ButtonContainer'><button type='button' onclick='RemoveFromOrderList(\"SundaeCount\")'>&#8722;\
-        </button><button type='button' onclick='AddToOrderList(\"SundaeCount\")'>&#43;</button>\
-        </div></div>"
-    }
-    else{
-        document.getElementById('SundaeCount').innerHTML = "<h2>Sundae</h2><p>You currently have " + SundaeCount + " orders of \
-        sundaes in your basket</p><div class='ButtonContainer'><button type='button' onclick='RemoveFromOrderList(\"SundaeCount\")'>&#8722;</button>\
-        <button type='button' onclick='AddToOrderList(\"SundaeCount\")'>&#43;</button></div>"
-    }
-}
+let FunnelCakeCount = localStorage.getItem("FunnelCakeCount");
+let MilkshakeCount = localStorage.getItem("MilkshakeCount");
+let CandyCount = localStorage.getItem("CandyCount");
 
 //Because out params don't exist in javascript, this just became 50x longer code
 function OrderList(FoodItem){
@@ -79,11 +36,23 @@ function OrderList(FoodItem){
     if("SundaeCount" == FoodItem){
         SundaeCount++;
     }
+    if("FunnelCakeCount" == FoodItem){
+        FunnelCakeCount++;
+    }
+    if("MilkshakeCount" == FoodItem){
+        MilkshakeCount++;
+    }
+    if("CandyCount" == FoodItem){
+        CandyCount++;
+    }
     
     localStorage.setItem("CupcakeCount", CupcakeCount)
     localStorage.setItem("LoadedFriesCount", LoadedFriesCount)
     localStorage.setItem("CookieCount", CookieCount)
     localStorage.setItem("SundaeCount", SundaeCount)
+    localStorage.setItem("FunnelCakeCount", FunnelCakeCount)
+    localStorage.setItem("MilkshakeCount", MilkshakeCount)
+    localStorage.setItem("CandyCount", CandyCount)
 }
 
 function RemoveFromOrderList(FoodItem){
@@ -111,20 +80,67 @@ function RemoveFromOrderList(FoodItem){
             SundaeCount = 0
         }
     }
+    if("LoadedFriesCount" == FoodItem){
+        LoadedFriesCount--;
+        if (LoadedFriesCount < 0){
+            LoadedFriesCount = 0
+        }
+    }
+    if("CookieCount" == FoodItem){
+        CookieCount--;
+        if (CookieCount < 0){
+            CookieCount = 0
+        }
+    }
+    if("SundaeCount" == FoodItem){
+        SundaeCount--;
+        if (SundaeCount < 0){
+            SundaeCount = 0
+        }
+    }
+    if("FunnelCakeCount" == FoodItem){
+        FunnelCakeCount--;
+        if (FunnelCakeCount < 0){
+            FunnelCakeCount = 0
+        }
+    }
+    if("MilkshakeCount" == FoodItem){
+        MilkshakeCount--;
+        if (MilkshakeCount < 0){
+            MilkshakeCount = 0
+        }
+    }
+    if("CandyCount" == FoodItem){
+        CandyCount--;
+        if (CandyCount < 0){
+            CandyCount = 0
+        }
+    }
     
     localStorage.setItem("CupcakeCount", CupcakeCount)
     localStorage.setItem("LoadedFriesCount", LoadedFriesCount)
     localStorage.setItem("CookieCount", CookieCount)
     localStorage.setItem("SundaeCount", SundaeCount)
+    localStorage.setItem("FunnelCakeCount", FunnelCakeCount)
+    localStorage.setItem("MilkshakeCount", MilkshakeCount)
+    localStorage.setItem("CandyCount", CandyCount)
 
-    AddToList()
+    UpdateCardText('CupcakeCount', CupcakeCount, 'Cupcake')
+    UpdateCardText('LoadedFriesCount', LoadedFriesCount, 'Loaded Fries')
+    UpdateCardText('CookieCount', CookieCount, 'Cookie')
+    UpdateCardText('SundaeCount', SundaeCount, 'Sundae')
+    UpdateCardText('FunnelCakeCount', FunnelCakeCount, 'Funnel Cake')
+    UpdateCardText('MilkshakeCount', MilkshakeCount, 'Milkshake')
+    UpdateCardText('CandyCount', CandyCount, 'Candy')
+    // AddToList()
 }
 
 function AddToOrderList(FoodItem){
-    if("CupcakeCount" == FoodItem){
+    //AddToOrderList('CupcakeCount')
+    if('CupcakeCount' == FoodItem){
         CupcakeCount++;
     }
-    if("LoadedFriesCount" == FoodItem){
+    if('LoadedFriesCount' == FoodItem){
         LoadedFriesCount++;
     }
     if("CookieCount" == FoodItem){
@@ -133,15 +149,39 @@ function AddToOrderList(FoodItem){
     if("SundaeCount" == FoodItem){
         SundaeCount++;
     }
+    if("FunnelCakeCount" == FoodItem){
+        FunnelCakeCount++;
+    }
+    if("MilkshakeCount" == FoodItem){
+        MilkshakeCount++;
+    }
+    if("CandyCount" == FoodItem){
+        CandyCount++;
+    }
     
     localStorage.setItem("CupcakeCount", CupcakeCount)
     localStorage.setItem("LoadedFriesCount", LoadedFriesCount)
     localStorage.setItem("CookieCount", CookieCount)
     localStorage.setItem("SundaeCount", SundaeCount)
+    localStorage.setItem("FunnelCakeCount", FunnelCakeCount)
+    localStorage.setItem("MilkshakeCount", MilkshakeCount)
+    localStorage.setItem("CandyCount", CandyCount)
 
-    AddToList()
+    UpdateCardText('CupcakeCount', CupcakeCount, 'Cupcake')
+    UpdateCardText('LoadedFriesCount', LoadedFriesCount, 'Loaded Fries')
+    UpdateCardText('CookieCount', CookieCount, 'Cookie')
+    UpdateCardText('SundaeCount', SundaeCount, 'Sundae')
+    UpdateCardText('FunnelCakeCount', FunnelCakeCount, 'Funnel Cake')
+    UpdateCardText('MilkshakeCount', MilkshakeCount, 'Milkshake')
+    UpdateCardText('CandyCount', CandyCount, 'Candy')
 }
 
 function ClickedACard(CardParent, Count, FoodItem){
     CardParent.querySelector('p').innerHTML = "You have ordered " + Count + " " + FoodItem
+}
+
+function UpdateCardText(CardParent, Count, FoodItem){
+    ElList.querySelector("#" + CardParent).innerHTML = "<h2>"+ FoodItem +"</h2><p>You currently have " + Count + " orders of " + FoodItem.toLowerCase() + " in your basket</p>\
+    <div class='ButtonContainer'><button type='button' onclick='RemoveFromOrderList(\"" + CardParent + "\")'>&#8722;</button>\
+    <button type='button' onclick='AddToOrderList(\"" + CardParent + "\")''>&#43;</button></div>"
 }
