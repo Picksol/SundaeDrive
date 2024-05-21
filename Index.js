@@ -58,42 +58,28 @@ function OrderList(FoodItem){
 function RemoveFromOrderList(FoodItem){
     if("CupcakeCount" == FoodItem){
         CupcakeCount--;
+        console.log("Minus" + FoodItem)
         if (CupcakeCount < 0){
             CupcakeCount = 0
         }
     }
     if("LoadedFriesCount" == FoodItem){
         LoadedFriesCount--;
+        console.log("Minus" + FoodItem)
         if (LoadedFriesCount < 0){
             LoadedFriesCount = 0
         }
     }
     if("CookieCount" == FoodItem){
         CookieCount--;
+        console.log("Minus" + FoodItem)
         if (CookieCount < 0){
             CookieCount = 0
         }
     }
     if("SundaeCount" == FoodItem){
         SundaeCount--;
-        if (SundaeCount < 0){
-            SundaeCount = 0
-        }
-    }
-    if("LoadedFriesCount" == FoodItem){
-        LoadedFriesCount--;
-        if (LoadedFriesCount < 0){
-            LoadedFriesCount = 0
-        }
-    }
-    if("CookieCount" == FoodItem){
-        CookieCount--;
-        if (CookieCount < 0){
-            CookieCount = 0
-        }
-    }
-    if("SundaeCount" == FoodItem){
-        SundaeCount--;
+        console.log("Minus" + FoodItem)
         if (SundaeCount < 0){
             SundaeCount = 0
         }
